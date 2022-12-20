@@ -29,7 +29,7 @@ export function findPair(
   targetSum: number,
   entries: number[],
 ): Pair | undefined {
-  let pairOfTargetSum = ([x, y]: Pair) => x + y === targetSum
+  const pairOfTargetSum = ([x, y]: Pair) => x + y === targetSum
   return pairs(entries).find(pairOfTargetSum)
 }
 
@@ -37,16 +37,14 @@ export function findTriple(
   targetSum: number,
   entries: number[],
 ): Triple | undefined {
-  let tripleOfTargetSum = ([x, y, z]: Triple) => x + y + z === targetSum
+  const tripleOfTargetSum = ([x, y, z]: Triple) => x + y + z === targetSum
   return triples(entries).find(tripleOfTargetSum)
 }
 
 export function pairs(entries: number[]): Pair[] {
   if (entries.length < 2) return []
   const current = entries.shift() as number
-  return entries
-    .map<Pair>((y) => [current, y])
-    .concat(pairs(entries))
+  return entries.map<Pair>((y) => [current, y]).concat(pairs(entries))
 }
 
 export function triples(entries: number[]): Triple[] {

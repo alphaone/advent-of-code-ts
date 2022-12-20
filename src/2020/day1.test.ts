@@ -1,10 +1,10 @@
 import {
-  pairs,
   findPair,
-  productOfPairWithSum,
-  triples,
   findTriple,
+  pairs,
+  productOfPairWithSum,
   productOfTripleWithSum,
+  triples,
 } from './day1'
 import { readNumberInput } from '../utils'
 
@@ -58,9 +58,7 @@ test('find product of triple with sum 2020', () => {
 
 test('find triple with sum of 2020', () => {
   expect(findTriple(2020, [1721, 979, 366, 299, 675, 1456])).toEqual([
-    979,
-    366,
-    675,
+    979, 366, 675,
   ])
 })
 
