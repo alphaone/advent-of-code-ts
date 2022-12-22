@@ -1,16 +1,11 @@
+import { sum } from 'lodash'
+
 export function totalScorePart1(input: string[]): number {
-  return input
-    .map(parseRound1)
-    .map(score)
-    .reduce((acc, cur) => acc + cur)
+  return sum(input.map(parseRound1).map(score))
 }
 
 export function totalScorePart2(input: string[]): number {
-  return input
-    .map(parseRound2)
-    .map(chooseOutcome)
-    .map(score)
-    .reduce((acc, cur) => acc + cur)
+  return sum(input.map(parseRound2).map(chooseOutcome).map(score))
 }
 
 type Round = {
